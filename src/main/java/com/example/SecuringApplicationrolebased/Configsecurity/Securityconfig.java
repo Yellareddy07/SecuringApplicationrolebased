@@ -48,11 +48,15 @@ public class Securityconfig {
     public UserDetailsService userDetailsService(){
         UserDetails userDetails= User.withUsername("ravi")
                 .password(passwordEncoder().encode("password"))
+                //hashed password
+                //.password("$2a$10$5JJKvURaJlOXncjMlK7X4OJ73skBxFAVlSXZfCcPd.27c1gwpX7gW")
                 .roles("NORMAL")
                 .build();
 
         UserDetails adminDetails= User.withUsername("admin")
                 .password(passwordEncoder().encode("password"))
+                //hashed password
+                //.password("$2a$10$5JJKvURaJlOXncjMlK7X4OJ73skBxFAVlSXZfCcPd.27c1gwpX7gW")
                 .roles("ADMIN")
                 .build();
 
